@@ -1,0 +1,26 @@
+* Z:\home\marc\projects\Band_Gap_Reference\current_density_comparisons.asc
+Q1 N001 N003 N005 0 NPN
+Q2 N002 N003 N004 0 NPN
+R1 N004 N005 1k
+V1 Vdd 0 5
+Q3 N002 N003 N004 0 NPN
+Q4 N002 N003 N004 0 NPN
+Q5 N002 N003 N004 0 NPN
+Q6 N002 N003 N004 0 NPN
+Q7 N002 N003 N004 0 NPN
+Q8 N002 N003 N004 0 NPN
+Q9 N002 N003 N004 0 NPN
+R2 Vdd N002 10k
+R3 Vdd N001 10k
+XU1 N001 N002 Vdd 0 N003 level2 Avol=1Meg GBW=1.5Meg Slew=1.3Meg ilimit=15m rail=0 Vos=0 phimargin=50 en=0 enk=0 in=0 ink=0 Rin=10E12
+R4 N005 0 4.619k
+.model NPN NPN
+.model PNP PNP
+.lib C:\users\marc\My Documents\LTspiceXVII\lib\cmp\standard.bjt
+.include engr2420.sub
+.tran 0 10n 0
+* step param R1 1k 10k 1k
+.step temp -60 140 5
+.lib UniversalOpAmp2.lib
+.backanno
+.end
